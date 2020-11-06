@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+/*  style pour changer la bordure de l'input s'il est invalide en rouge */
+
 .form-control.ng-touched.ng-invalid{
     border:2px solid red;
 }

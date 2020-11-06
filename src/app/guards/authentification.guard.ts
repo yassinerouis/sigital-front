@@ -8,15 +8,19 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthentificationGuard implements CanActivate {
-  constructor(private login:LoginService,private route:Router){
 
-  }
+  constructor(private login : LoginService , private route : Router){}
+
   canActivate(): boolean {
+
     if(this.login.getUsername()){
       return true;
-    }else{
+    }
+    else{
       this.route.navigate(['/login'])
       return false;
     }
+    
   }
+
 }

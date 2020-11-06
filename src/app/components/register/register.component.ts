@@ -38,13 +38,15 @@ export class RegisterComponent implements OnInit {
       this.loginService.login({username:this.user.username,password:this.user.password}).subscribe(response=>{
         const token=response.headers.get('Authorization')
         this.loginService.saveToken(token); 
+
         Swal.fire({
-          position: 'top-end',
+          position: 'center-end',
           icon: 'success',
           title: 'Bienvenue',
           showConfirmButton: false,
           timer: 1500
         })
+
         this.router.navigate(['/'])
       })
     })

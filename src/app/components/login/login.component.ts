@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.loginService.saveToken(token); 
 
       Swal.fire({
-        position: 'top-end',
+        position: 'center-end',
         icon: 'success',
         title: 'Bienvenue',
         showConfirmButton: false,
