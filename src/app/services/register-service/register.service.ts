@@ -13,7 +13,7 @@ export class RegisterService {
 
   saveUser(user){
     return this.httpClient.post
-      (this.server_link+"/users/save", user ,
+      (this.server_link+"/saveUser", user ,
         {
           headers: {'Content-Type': 'application/json'}, 
           observe : 'response'
@@ -22,7 +22,7 @@ export class RegisterService {
 
   getUser(username){
     return this.httpClient.get
-      (this.server_link+"/users/get/"+username ,
+      (this.server_link+"/getUser/"+username ,
       {headers : new HttpHeaders({'authorization':localStorage.getItem("JwtToken"), 'Content-Type':'application/json'})}
       )
     }

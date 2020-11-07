@@ -20,6 +20,7 @@ const routes : Routes = [
 ]
 
 @NgModule({
+
   declarations: [
     AppComponent,
     LoginComponent,
@@ -28,6 +29,7 @@ const routes : Routes = [
     RegisterComponent,
     NotFoundComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -35,7 +37,10 @@ const routes : Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
+
   providers: [AuthentificationGuard],
+
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

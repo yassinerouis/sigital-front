@@ -16,15 +16,15 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     if(this.loginService.getUsername()){
-      this.userLoggedIn=this.loginService.getUsername()
-      this.isLoggedIn=true
+      this.userLoggedIn = this.loginService.getUsername()
+      this.isLoggedIn = true
     }
   }
 
   logout(){
     this.loginService.logOut()
-    this.isLoggedIn=false
-    this.userLoggedIn=null
+    this.isLoggedIn = false
+    this.userLoggedIn = null
     this.router.navigate(['/login'])
   }
   

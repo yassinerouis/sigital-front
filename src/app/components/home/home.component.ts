@@ -9,18 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   user : User = {
     firstName:"",
     lastName:"",
     username:"",
     password:""
   }
-  constructor(private loginService :LoginService,private registerService:RegisterService) { }
+
+  constructor(private loginService : LoginService , private registerService : RegisterService) { }
 
   ngOnInit() {
-    this.user.username=this.loginService.getUsername()
+    this.user.username = this.loginService.getUsername()
     this.registerService.getUser(this.user.username).subscribe(user=>{
-      this.user=(user as User)
+      console.log(user)
+      this.user = (user as User)
       console.log(this.user)
     })
   }

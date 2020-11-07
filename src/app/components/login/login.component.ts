@@ -11,21 +11,21 @@ import Swal from 'sweetalert2'
 })
 export class LoginComponent implements OnInit {
 
-  auth = {username:"",password:""}
+  auth = {username : "" , password : ""}
 
   form = new FormGroup(
     {
-      username : new FormControl('',Validators.required),
-      password : new FormControl('',[Validators.required])
+      username : new FormControl('' , Validators.required),
+      password : new FormControl('' , [Validators.required])
     }
   )
   constructor(private loginService : LoginService , private router : Router) { }
   
-  ngOnInit() {}
+  ngOnInit() { }
 
   login(){
-    this.loginService.login(this.auth).subscribe(res => {
-      const token=res.headers.get('Authorization')
+    this.loginService.login(this.auth).subscribe(response => {
+      const token = response.headers.get('Authorization')
       this.loginService.saveToken(token); 
 
       Swal.fire({
@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/'])
       }
-      , err=>{
+      , ()=>{
 
         Swal.fire({
           title: 'Erreur de connexion !',
-          text: 'Veuillez verifier vos informations de connexion',
+          text: 'Veuillez vérifier vos informations de connexion',
           icon: 'error',
           confirmButtonText: 'OK'
         })
