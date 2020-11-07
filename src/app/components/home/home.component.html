@@ -1,4 +1,4 @@
 <app-navbar ></app-navbar>
-<div class="container">
+<div *ngIf="user" class="container">
     <p>Bienvenue chez nous {{user?.firstName}} {{user?.lastName}}</p>
 </div>

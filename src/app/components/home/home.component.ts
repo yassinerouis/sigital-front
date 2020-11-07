@@ -22,9 +22,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.user.username = this.loginService.getUsername()
     this.registerService.getUser(this.user.username).subscribe(user=>{
-      console.log(user)
       this.user = (user as User)
-      console.log(this.user)
     })
   }
 
